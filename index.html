@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -20,542 +21,1213 @@
     <link rel="canonical"
           href="https://hoatask-commits.github.io/fitness-apps/">
 
+
+    <!-- ========================= -->
+    <!-- CSS -->
+    <!-- ========================= -->
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                #064e3b;
+
+            color:
+                #ffffff;
+
+            line-height:
+                1.8;
+
+        }
+
+
+        /* ========================= */
+        /* LINKS */
+        /* ========================= */
+
+        a {
+
+            color:
+                #38bdf8;
+
+            font-weight:
+                700;
+
+            text-decoration:
+                none;
+
+        }
+
+
+        a:hover {
+
+            color:
+                #7dd3fc;
+
+            text-decoration:
+                underline;
+
+        }
+
+
+        /* ========================= */
+        /* MAIN CONTAINER */
+        /* ========================= */
+
+        main {
+
+            width:
+                100%;
+
+            max-width:
+                1100px;
+
+            margin:
+                0 auto;
+
+            padding:
+                30px 20px 80px;
+
+        }
+
+
+        article {
+
+            width:
+                100%;
+
+        }
+
+
+        /* ========================= */
+        /* HERO */
+        /* ========================= */
+
+        header {
+
+            text-align:
+                center;
+
+            padding:
+                70px 30px;
+
+            margin-bottom:
+                35px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #047857,
+                    #065f46
+                );
+
+            border-radius:
+                24px;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.25);
+
+        }
+
+
+        header h1 {
+
+            margin:
+                0 auto 25px;
+
+            max-width:
+                850px;
+
+            font-size:
+                clamp(2.2rem, 5vw, 4rem);
+
+            line-height:
+                1.15;
+
+        }
+
+
+        header p {
+
+            max-width:
+                850px;
+
+            margin:
+                18px auto;
+
+            color:
+                #ecfdf5;
+
+            font-size:
+                1.08rem;
+
+        }
+
+
+        /* ========================= */
+        /* SECTIONS */
+        /* ========================= */
+
+        section {
+
+            margin-bottom:
+                35px;
+
+            padding:
+                40px;
+
+            background:
+                #065f46;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            border-radius:
+                22px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.20);
+
+        }
+
+
+        /* ========================= */
+        /* HEADINGS */
+        /* ========================= */
+
+        h2 {
+
+            margin-top:
+                0;
+
+            margin-bottom:
+                25px;
+
+            font-size:
+                clamp(1.8rem, 4vw, 2.5rem);
+
+            line-height:
+                1.25;
+
+            color:
+                #ffffff;
+
+        }
+
+
+        h3 {
+
+            margin-top:
+                35px;
+
+            margin-bottom:
+                15px;
+
+            font-size:
+                1.35rem;
+
+            color:
+                #d1fae5;
+
+        }
+
+
+        p {
+
+            color:
+                #f0fdf4;
+
+        }
+
+
+        strong {
+
+            color:
+                #ffffff;
+
+        }
+
+
+        /* ========================= */
+        /* LISTS */
+        /* ========================= */
+
+        ul {
+
+            padding-left:
+                25px;
+
+        }
+
+
+        li {
+
+            margin-bottom:
+                8px;
+
+            color:
+                #ecfdf5;
+
+        }
+
+
+        li::marker {
+
+            color:
+                #38bdf8;
+
+        }
+
+
+        /* ========================= */
+        /* CTA BUTTON */
+        /* ========================= */
+
+        .cta {
+
+            display:
+                inline-block;
+
+            margin-top:
+                10px;
+
+            padding:
+                14px 25px;
+
+            background:
+                #38bdf8;
+
+            color:
+                #052e16;
+
+            border-radius:
+                10px;
+
+            font-weight:
+                800;
+
+            transition:
+                0.2s ease;
+
+        }
+
+
+        .cta:hover {
+
+            background:
+                #7dd3fc;
+
+            color:
+                #052e16;
+
+            text-decoration:
+                none;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* ========================= */
+        /* APP BADGE */
+        /* ========================= */
+
+        .app-label {
+
+            display:
+                inline-block;
+
+            margin-bottom:
+                15px;
+
+            padding:
+                6px 13px;
+
+            border-radius:
+                50px;
+
+            background:
+                rgba(56,189,248,0.15);
+
+            color:
+                #7dd3fc;
+
+            font-size:
+                0.9rem;
+
+            font-weight:
+                700;
+
+        }
+
+
+        /* ========================= */
+        /* FEATURE GRID */
+        /* ========================= */
+
+        .feature-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                15px;
+
+            margin-top:
+                25px;
+
+        }
+
+
+        .feature {
+
+            padding:
+                20px;
+
+            background:
+                #047857;
+
+            border-radius:
+                15px;
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+        }
+
+
+        .feature strong {
+
+            display:
+                block;
+
+            margin-bottom:
+                6px;
+
+            color:
+                #ffffff;
+
+        }
+
+
+        /* ========================= */
+        /* TABLE */
+        /* ========================= */
+
+        .table-container {
+
+            width:
+                100%;
+
+            overflow-x:
+                auto;
+
+        }
+
+
+        table {
+
+            width:
+                100%;
+
+            border-collapse:
+                collapse;
+
+            margin-top:
+                20px;
+
+            background:
+                #047857;
+
+            border-radius:
+                15px;
+
+            overflow:
+                hidden;
+
+        }
+
+
+        th {
+
+            padding:
+                16px;
+
+            text-align:
+                left;
+
+            background:
+                #064e3b;
+
+            color:
+                #ffffff;
+
+        }
+
+
+        td {
+
+            padding:
+                15px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.08);
+
+            color:
+                #ecfdf5;
+
+        }
+
+
+        tr:hover td {
+
+            background:
+                rgba(56,189,248,0.08);
+
+        }
+
+
+        /* ========================= */
+        /* FINAL CTA */
+        /* ========================= */
+
+        #start {
+
+            text-align:
+                center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #047857,
+                    #059669
+                );
+
+        }
+
+
+        #start h2 {
+
+            font-size:
+                2.4rem;
+
+        }
+
+
+        .app-block {
+
+            max-width:
+                700px;
+
+            margin:
+                35px auto;
+
+            padding:
+                25px;
+
+            background:
+                rgba(0,0,0,0.15);
+
+            border-radius:
+                18px;
+
+        }
+
+
+        .app-block h3 {
+
+            margin-top:
+                0;
+
+            font-size:
+                1.7rem;
+
+            color:
+                #ffffff;
+
+        }
+
+
+        /* ========================= */
+        /* FOOTER */
+        /* ========================= */
+
+        footer {
+
+            text-align:
+                center;
+
+            padding:
+                30px 20px;
+
+            color:
+                #d1fae5;
+
+            font-size:
+                0.9rem;
+
+        }
+
+
+        /* ========================= */
+        /* MOBILE */
+        /* ========================= */
+
+        @media (max-width: 768px) {
+
+            main {
+
+                padding:
+                    15px 12px 50px;
+
+            }
+
+
+            header {
+
+                padding:
+                    45px 20px;
+
+                border-radius:
+                    18px;
+
+            }
+
+
+            section {
+
+                padding:
+                    25px 20px;
+
+                border-radius:
+                    18px;
+
+            }
+
+
+            .feature-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+
+            h2 {
+
+                font-size:
+                    1.8rem;
+
+            }
+
+
+            h3 {
+
+                font-size:
+                    1.2rem;
+
+            }
+
+
+            header p {
+
+                font-size:
+                    1rem;
+
+            }
+
+
+            table {
+
+                min-width:
+                    600px;
+
+            }
+
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
+
 <main>
 
-    <article>
+<article>
 
 
-        <!-- ========================= -->
-        <!-- INTRODUCTION -->
-        <!-- ========================= -->
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
 
-        <header>
+    <header>
 
-            <h1>
-                AI Fitness Apps Worth Trying:
-                RepMotion &amp; KcalMotion Dance
-            </h1>
+        <span class="app-label">
+            AI FITNESS TECHNOLOGY
+        </span>
 
-            <p>
-                Fitness technology is changing the way people exercise.
-                With AI-powered motion tracking, your smartphone can help
-                analyze movement, count exercise repetitions, track workout
-                activity, and make fitness more interactive.
-            </p>
+        <h1>
+            AI Fitness Apps Worth Trying:
+            RepMotion &amp; KcalMotion Dance
+        </h1>
 
-            <p>
-                If you're looking for
-                <strong>AI fitness apps worth trying</strong>,
-                two apps offer different approaches to staying active:
-                <strong>RepMotion</strong> and
-                <strong>KcalMotion Dance</strong>.
-            </p>
+        <p>
+            Discover smarter ways to exercise with AI-powered
+            fitness technology.
+        </p>
 
-            <p>
-                RepMotion focuses on strength training and automatic exercise
-                tracking, while KcalMotion Dance brings AI-powered movement
-                tracking to dance and active workouts.
-            </p>
+        <p>
+            Explore RepMotion for strength training and AI rep
+            counting, or KcalMotion Dance for movement-based
+            and dance fitness.
+        </p>
 
-        </header>
+    </header>
 
 
-        <!-- ========================= -->
-        <!-- REPMOTION -->
-        <!-- ========================= -->
+    <!-- ========================= -->
+    <!-- INTRODUCTION -->
+    <!-- ========================= -->
 
-        <section id="repmotion">
+    <section>
 
-            <h2>
-                RepMotion – AI Workout Tracker &amp; Rep Counter
-            </h2>
+        <h2>
+            Discover a Smarter Way to Work Out
+        </h2>
 
+        <p>
+            Fitness technology is changing the way people exercise.
+            With AI-powered motion tracking, your smartphone can help
+            analyze movement, count exercise repetitions, track workout
+            activity, and make fitness more interactive.
+        </p>
 
-            <h3>
-                Turn Your Smartphone Into an AI Workout Tracker
-            </h3>
+        <p>
+            If you're looking for
+            <strong>AI fitness apps worth trying</strong>,
+            two apps offer different approaches to staying active:
+            <strong>RepMotion</strong> and
+            <strong>KcalMotion Dance</strong>.
+        </p>
 
-            <p>
-                <strong>RepMotion</strong> is an AI-powered fitness app
-                designed to help you track workouts with less manual effort.
-            </p>
+        <p>
+            RepMotion focuses on strength training and automatic exercise
+            tracking, while KcalMotion Dance brings AI-powered movement
+            tracking to dance and active workouts.
+        </p>
 
-            <p>
-                Instead of manually counting every repetition, position your
-                Android smartphone so your body is visible to the camera and
-                let the app analyze your movement during supported exercises.
-            </p>
+    </section>
 
-            <p>
-                RepMotion combines exercise tracking and workout monitoring
-                features in one experience.
-            </p>
 
+    <!-- ========================= -->
+    <!-- REP MOTION -->
+    <!-- ========================= -->
 
-            <ul>
+    <section id="repmotion">
 
-                <li>AI-powered rep counting</li>
+        <span class="app-label">
+            STRENGTH TRAINING
+        </span>
 
-                <li>Automatic workout tracking</li>
+        <h2>
+            RepMotion – AI Workout Tracker &amp; Rep Counter
+        </h2>
 
-                <li>Exercise movement detection</li>
 
-                <li>Exercise state tracking</li>
+        <h3>
+            Turn Your Smartphone Into an AI Workout Tracker
+        </h3>
 
-                <li>Workout timer</li>
+        <p>
+            <strong>RepMotion</strong> is an AI-powered fitness app
+            designed to help you track workouts with less manual effort.
+        </p>
 
-                <li>Estimated calorie tracking</li>
+        <p>
+            Instead of manually counting every repetition, position your
+            Android smartphone so your body is visible to the camera and
+            let the app analyze your movement during supported exercises.
+        </p>
 
-                <li>Workout history</li>
 
-                <li>Progress tracking</li>
+        <div class="feature-grid">
 
-                <li>Voice guidance</li>
+            <div class="feature">
+                <strong>AI Rep Counting</strong>
+                Automatically track supported exercise repetitions.
+            </div>
+
+            <div class="feature">
+                <strong>Workout Tracking</strong>
+                Monitor your exercise activity and workout sessions.
+            </div>
+
+            <div class="feature">
+                <strong>Workout History</strong>
+                Review previous workouts and follow your progress.
+            </div>
+
+            <div class="feature">
+                <strong>Calorie Tracking</strong>
+                View estimated calories burned during workouts.
+            </div>
+
+            <div class="feature">
+                <strong>Fitness Challenges</strong>
+                Add challenges and goals to your training routine.
+            </div>
+
+            <div class="feature">
+                <strong>Global Leaderboard</strong>
+                Compare your fitness activity with other users.
+            </div>
+
+        </div>
+
 
-                <li>Fitness challenges</li>
+        <h3>
+            AI Rep Counter for Strength Training
+        </h3>
+
+        <p>
+            Counting repetitions manually can interrupt your concentration
+            during a workout.
+        </p>
 
-                <li>Global leaderboard</li>
+        <p>
+            RepMotion is designed to provide a more hands-free way to
+            track repetitions. Its AI analyzes supported exercise
+            movements and helps identify completed reps while you train.
+        </p>
 
-            </ul>
+        <p>
+            This makes RepMotion useful for people searching for an
+            <strong>AI rep counter</strong>,
+            <strong>automatic rep counter</strong>,
+            <strong>exercise rep counter</strong>, or
+            <strong>AI workout tracker</strong>.
+        </p>
 
 
-            <h3>
-                AI Rep Counter for Strength Training
-            </h3>
+        <h3>
+            Supported Exercises
+        </h3>
 
-            <p>
-                Counting repetitions manually can interrupt your concentration
-                during a workout.
-            </p>
+        <ul>
 
-            <p>
-                RepMotion is designed to provide a more hands-free way to
-                track repetitions. Its AI analyzes supported exercise
-                movements and helps identify completed reps while you train.
-            </p>
+            <li>Push-Ups</li>
+            <li>Deadlifts</li>
+            <li>Back Squats</li>
+            <li>Goblet Squats</li>
+            <li>Sumo Squats</li>
+            <li>Air Squats</li>
+            <li>Dumbbell Thrusters</li>
+            <li>Barbell Thrusters</li>
+            <li>Dumbbell Overhead Press</li>
+            <li>Barbell Overhead Press</li>
+            <li>Dumbbell Lateral Raises</li>
+            <li>Dumbbell Deadlifts</li>
 
-            <p>
-                This makes RepMotion useful for people searching for an
-                <strong>AI rep counter</strong>,
-                <strong>automatic rep counter</strong>,
-                <strong>exercise rep counter</strong>, or
-                <strong>AI workout tracker</strong>.
-            </p>
+        </ul>
 
 
-            <h3>
-                Supported Exercises
-            </h3>
+        <h3>
+            Track More Than Repetitions
+        </h3>
 
-            <ul>
+        <p>
+            RepMotion is more than a basic rep counter.
+        </p>
 
-                <li>Push-Ups</li>
+        <p>
+            During your workouts, you can track information such as
+            exercise activity, workout duration, repetitions, weight used,
+            and estimated calories burned.
+        </p>
 
-                <li>Deadlifts</li>
+        <p>
+            Your workout history allows you to look back at previous
+            sessions and follow your training progress over time.
+        </p>
 
-                <li>Back Squats</li>
 
-                <li>Goblet Squats</li>
+        <h3>
+            Why Try RepMotion?
+        </h3>
 
-                <li>Sumo Squats</li>
+        <ul>
 
-                <li>Air Squats</li>
+            <li>An AI fitness tracker</li>
+            <li>An AI workout tracker</li>
+            <li>An automatic rep counter</li>
+            <li>An exercise rep counter</li>
+            <li>A workout rep counter</li>
+            <li>Workout activity tracking</li>
+            <li>Estimated calorie tracking</li>
+            <li>Workout history</li>
+            <li>Fitness challenges</li>
+            <li>Global fitness rankings</li>
+            <li>A hands-free workout tracking experience</li>
 
-                <li>Dumbbell Thrusters</li>
+        </ul>
 
-                <li>Barbell Thrusters</li>
 
-                <li>Dumbbell Overhead Press</li>
+        <p>
+            <strong>Train. Track. Improve.</strong>
+        </p>
 
-                <li>Barbell Overhead Press</li>
 
-                <li>Dumbbell Lateral Raises</li>
+        <p>
+            Explore a smarter way to track your workouts with RepMotion.
+        </p>
 
-                <li>Dumbbell Deadlifts</li>
 
-            </ul>
+        <p>
 
+            <a
+                class="cta"
+                href="https://play.google.com/store/apps/details?id=com.hoanguyendev.aisports"
+                target="_blank"
+                rel="noopener noreferrer">
 
-            <h3>
-                Track More Than Repetitions
-            </h3>
+                Try RepMotion on Google Play
 
-            <p>
-                RepMotion is more than a basic rep counter.
-            </p>
+            </a>
 
-            <p>
-                During your workouts, you can track information such as
-                exercise activity, workout duration, repetitions, weight used,
-                and estimated calories burned.
-            </p>
+        </p>
 
-            <p>
-                Your workout history allows you to look back at previous
-                sessions and follow your training progress over time.
-            </p>
+    </section>
 
-            <p>
-                Whether you're training at home or at the gym, RepMotion is
-                designed to reduce the amount of manual tracking required so
-                you can focus on your workout.
-            </p>
 
+    <!-- ========================= -->
+    <!-- KCALMOTION -->
+    <!-- ========================= -->
 
-            <h3>
-                Why Try RepMotion?
-            </h3>
+    <section id="kcalmotion-dance">
 
-            <ul>
+        <span class="app-label">
+            DANCE FITNESS
+        </span>
 
-                <li>An AI fitness tracker</li>
+        <h2>
+            KcalMotion Dance – AI Dance Fitness &amp; Calorie Tracking
+        </h2>
 
-                <li>An AI workout tracker</li>
 
-                <li>An automatic rep counter</li>
+        <h3>
+            Make Fitness More Fun With Dance
+        </h3>
 
-                <li>An exercise rep counter</li>
+        <p>
+            Not every workout has to take place in a traditional gym.
+        </p>
 
-                <li>A workout rep counter</li>
+        <p>
+            <strong>KcalMotion Dance</strong> is designed for people who
+            enjoy music, movement, and dance and want to turn those
+            activities into part of their fitness routine.
+        </p>
 
-                <li>Workout activity tracking</li>
+        <p>
+            The app combines movement tracking, dance workouts, and
+            estimated calorie activity to create a more interactive
+            fitness experience.
+        </p>
 
-                <li>Estimated calorie tracking</li>
 
-                <li>Workout history</li>
+        <div class="feature-grid">
 
-                <li>Fitness challenges</li>
+            <div class="feature">
+                <strong>Dance Fitness</strong>
+                Turn music and movement into an active workout.
+            </div>
 
-                <li>Global fitness rankings</li>
+            <div class="feature">
+                <strong>Movement Tracking</strong>
+                Track activity while you move and exercise.
+            </div>
 
-                <li>A hands-free workout tracking experience</li>
+            <div class="feature">
+                <strong>Calorie Activity</strong>
+                Monitor estimated calorie activity during sessions.
+            </div>
 
-            </ul>
+            <div class="feature">
+                <strong>Home Workouts</strong>
+                Enjoy movement-based fitness at home.
+            </div>
 
+            <div class="feature">
+                <strong>Music-Based Activity</strong>
+                Combine music, movement, and exercise.
+            </div>
 
-            <p>
-                <strong>Train. Track. Improve.</strong>
-            </p>
+            <div class="feature">
+                <strong>Interactive Fitness</strong>
+                Make daily activity more engaging and enjoyable.
+            </div>
 
+        </div>
 
-            <p>
-                Explore a smarter way to track your workouts with RepMotion.
-            </p>
 
+        <h3>
+            Dance, Move &amp; Stay Active
+        </h3>
 
-            <!-- REPMOTION CTA -->
+        <p>
+            Dance can be an enjoyable alternative to conventional
+            workouts, especially for people who prefer activities that
+            feel more entertaining and engaging.
+        </p>
 
-            <p>
+        <p>
+            KcalMotion Dance is designed to help you stay active while
+            enjoying movement and music.
+        </p>
 
-                <a
-                    href="https://play.google.com/store/apps/details?id=com.hoanguyendev.aisports"
-                    target="_blank"
-                    rel="noopener noreferrer">
 
-                    Try RepMotion on Google Play
+        <p>
+            It's suitable for people interested in:
+        </p>
 
-                </a>
 
-            </p>
+        <ul>
 
-        </section>
+            <li>Dance fitness</li>
+            <li>Dance workouts</li>
+            <li>Home workouts</li>
+            <li>Cardio-style activity</li>
+            <li>Active movement</li>
+            <li>Calorie tracking</li>
+            <li>Fitness sessions</li>
+            <li>Movement-based exercise</li>
+            <li>Daily physical activity</li>
 
+        </ul>
 
-        <!-- ========================= -->
-        <!-- KCALMOTION DANCE -->
-        <!-- ========================= -->
 
-        <section id="kcalmotion-dance">
+        <h3>
+            An AI-Powered Approach to Dance Fitness
+        </h3>
 
-            <h2>
-                KcalMotion Dance – AI Dance Fitness &amp; Calorie Tracking
-            </h2>
+        <p>
+            AI and motion-tracking technology are creating new
+            possibilities for fitness applications.
+        </p>
 
+        <p>
+            Instead of limiting AI fitness technology to traditional gym
+            exercises, KcalMotion Dance explores how movement tracking can
+            be combined with dance and active entertainment.
+        </p>
 
-            <h3>
-                Make Fitness More Fun With Dance
-            </h3>
+        <p>
+            The goal is simple: make physical activity feel more engaging
+            and enjoyable.
+        </p>
 
-            <p>
-                Not every workout has to take place in a traditional gym.
-            </p>
 
-            <p>
-                <strong>KcalMotion Dance</strong> is designed for people who
-                enjoy music, movement, and dance and want to turn those
-                activities into part of their fitness routine.
-            </p>
+        <h3>
+            Why Try KcalMotion Dance?
+        </h3>
 
-            <p>
-                The app combines movement tracking, dance workouts, and
-                estimated calorie activity to create a more interactive
-                fitness experience.
-            </p>
+        <ul>
 
-            <p>
-                Whether you're dancing at home, doing a cardio-style session,
-                or simply looking for a more enjoyable way to stay active,
-                KcalMotion Dance gives you another way to approach fitness.
-            </p>
+            <li>A dance fitness app</li>
+            <li>An AI fitness app</li>
+            <li>A dance workout experience</li>
+            <li>A movement-based fitness app</li>
+            <li>A workout calorie tracker</li>
+            <li>Home fitness activities</li>
+            <li>Music-based workouts</li>
+            <li>A fun way to stay active</li>
+            <li>A more interactive fitness experience</li>
 
+        </ul>
 
-            <h3>
-                Dance, Move &amp; Stay Active
-            </h3>
 
-            <p>
-                Dance can be an enjoyable alternative to conventional
-                workouts, especially for people who prefer activities that
-                feel more entertaining and engaging.
-            </p>
+        <p>
+            <strong>
+                Move More. Dance More. Stay Active.
+            </strong>
+        </p>
 
-            <p>
-                KcalMotion Dance is designed to help you stay active while
-                enjoying movement and music.
-            </p>
 
-            <p>
-                It's suitable for people interested in:
-            </p>
+        <p>
+            Turn movement and dance into part of your fitness journey
+            with KcalMotion Dance.
+        </p>
 
 
-            <ul>
+        <p>
 
-                <li>Dance fitness</li>
+            <a
+                class="cta"
+                href="https://play.google.com/store/apps/details?id=com.dev.motion"
+                target="_blank"
+                rel="noopener noreferrer">
 
-                <li>Dance workouts</li>
+                Try KcalMotion Dance on Google Play
 
-                <li>Home workouts</li>
+            </a>
 
-                <li>Cardio-style activity</li>
+        </p>
 
-                <li>Active movement</li>
+    </section>
 
-                <li>Calorie tracking</li>
 
-                <li>Fitness sessions</li>
+    <!-- ========================= -->
+    <!-- COMPARISON -->
+    <!-- ========================= -->
 
-                <li>Movement-based exercise</li>
+    <section id="comparison">
 
-                <li>Daily physical activity</li>
+        <h2>
+            RepMotion vs. KcalMotion Dance
+        </h2>
 
-            </ul>
+        <p>
+            Not every fitness app is designed for the same type of user.
+            RepMotion and KcalMotion Dance take different approaches to
+            fitness, so the right choice depends on how you prefer to
+            exercise.
+        </p>
 
 
-            <h3>
-                An AI-Powered Approach to Dance Fitness
-            </h3>
+        <h3>
+            Choose RepMotion for Strength Training
+        </h3>
 
-            <p>
-                AI and motion-tracking technology are creating new
-                possibilities for fitness applications.
-            </p>
+        <p>
+            <strong>RepMotion</strong> is designed for people who enjoy
+            strength training and want to track exercises such as:
+        </p>
 
-            <p>
-                Instead of limiting AI fitness technology to traditional gym
-                exercises, KcalMotion Dance explores how movement tracking can
-                be combined with dance and active entertainment.
-            </p>
 
-            <p>
-                The goal is simple: make physical activity feel more engaging
-                and enjoyable.
-            </p>
+        <ul>
 
+            <li>Squats</li>
+            <li>Deadlifts</li>
+            <li>Push-Ups</li>
+            <li>Overhead Presses</li>
+            <li>Thrusters</li>
+            <li>Lateral Raises</li>
 
-            <h3>
-                Why Try KcalMotion Dance?
-            </h3>
+        </ul>
 
-            <ul>
 
-                <li>A dance fitness app</li>
+        <p>
+            If you're interested in
+            <strong>AI rep counting</strong>,
+            automatic workout tracking, exercise history, and training
+            progress, RepMotion may be the better fit.
+        </p>
 
-                <li>An AI fitness app</li>
 
-                <li>A dance workout experience</li>
+        <h3>
+            Choose KcalMotion Dance for Active &amp; Fun Workouts
+        </h3>
 
-                <li>A movement-based fitness app</li>
+        <p>
+            <strong>KcalMotion Dance</strong> is designed for people who
+            prefer dance, music, movement, and active workouts.
+        </p>
 
-                <li>A workout calorie tracker</li>
+        <p>
+            Instead of focusing primarily on traditional strength
+            exercises, it provides a more entertainment-focused approach
+            to staying active.
+        </p>
 
-                <li>Home fitness activities</li>
+        <p>
+            If you enjoy dancing and want to make movement part of your
+            fitness routine, KcalMotion Dance is worth exploring.
+        </p>
 
-                <li>Music-based workouts</li>
+    </section>
 
-                <li>A fun way to stay active</li>
 
-                <li>A more interactive fitness experience</li>
+    <!-- ========================= -->
+    <!-- TWO APPROACHES -->
+    <!-- ========================= -->
 
-            </ul>
+    <section id="two-ways-to-stay-active">
 
+        <h2>
+            Two Different Ways to Stay Active
+        </h2>
 
-            <p>
-                <strong>
-                    Move More. Dance More. Stay Active.
-                </strong>
-            </p>
+        <p>
+            There is no single perfect way to exercise.
+        </p>
 
+        <p>
+            Some people enjoy lifting weights, tracking repetitions, and
+            improving their strength. Others prefer music, dancing, and
+            workouts that feel more entertaining.
+        </p>
 
-            <p>
-                Turn movement and dance into part of your fitness journey
-                with KcalMotion Dance.
-            </p>
+        <p>
+            That's why <strong>RepMotion</strong> and
+            <strong>KcalMotion Dance</strong> are built around two
+            different fitness experiences.
+        </p>
 
+        <p>
+            <strong>RepMotion</strong> uses AI-powered motion tracking to
+            help users count reps and monitor strength-training workouts.
+        </p>
 
-            <!-- KCALMOTION CTA -->
+        <p>
+            <strong>KcalMotion Dance</strong> brings movement tracking and
+            calorie activity into a more dance-focused fitness experience.
+        </p>
 
-            <p>
+        <p>
+            Both approaches have the same goal: helping people make
+            movement a more consistent part of their lifestyle.
+        </p>
 
-                <a
-                    href="https://play.google.com/store/apps/details?id=com.dev.motion"
-                    target="_blank"
-                    rel="noopener noreferrer">
+    </section>
 
-                    Try KcalMotion Dance on Google Play
 
-                </a>
+    <!-- ========================= -->
+    <!-- COMPARISON TABLE -->
+    <!-- ========================= -->
 
-            </p>
+    <section id="which-app">
 
-        </section>
+        <h2>
+            Which AI Fitness App Is Right for You?
+        </h2>
 
 
-        <!-- ========================= -->
-        <!-- COMPARISON -->
-        <!-- ========================= -->
-
-        <section id="comparison">
-
-            <h2>
-                RepMotion vs. KcalMotion Dance
-            </h2>
-
-            <p>
-                Not every fitness app is designed for the same type of user.
-                RepMotion and KcalMotion Dance take different approaches to
-                fitness, so the right choice depends on how you prefer to
-                exercise.
-            </p>
-
-
-            <h3>
-                Choose RepMotion for Strength Training
-            </h3>
-
-            <p>
-                <strong>RepMotion</strong> is designed for people who enjoy
-                strength training and want to track exercises such as:
-            </p>
-
-
-            <ul>
-
-                <li>Squats</li>
-
-                <li>Deadlifts</li>
-
-                <li>Push-Ups</li>
-
-                <li>Overhead Presses</li>
-
-                <li>Thrusters</li>
-
-                <li>Lateral Raises</li>
-
-            </ul>
-
-
-            <p>
-                If you're interested in
-                <strong>AI rep counting</strong>,
-                automatic workout tracking, exercise history, and training
-                progress, RepMotion may be the better fit.
-            </p>
-
-
-            <h3>
-                Choose KcalMotion Dance for Active &amp; Fun Workouts
-            </h3>
-
-            <p>
-                <strong>KcalMotion Dance</strong> is designed for people who
-                prefer dance, music, movement, and active workouts.
-            </p>
-
-            <p>
-                Instead of focusing primarily on traditional strength
-                exercises, it provides a more entertainment-focused approach
-                to staying active.
-            </p>
-
-            <p>
-                If you enjoy dancing and want to make movement part of your
-                fitness routine, KcalMotion Dance is worth exploring.
-            </p>
-
-        </section>
-
-
-        <!-- ========================= -->
-        <!-- TWO WAYS -->
-        <!-- ========================= -->
-
-        <section id="two-ways-to-stay-active">
-
-            <h2>
-                Two Different Ways to Stay Active
-            </h2>
-
-            <p>
-                There is no single perfect way to exercise.
-            </p>
-
-            <p>
-                Some people enjoy lifting weights, tracking repetitions, and
-                improving their strength. Others prefer music, dancing, and
-                workouts that feel more entertaining.
-            </p>
-
-            <p>
-                That's why <strong>RepMotion</strong> and
-                <strong>KcalMotion Dance</strong> are built around two
-                different fitness experiences.
-            </p>
-
-            <p>
-                <strong>RepMotion</strong> uses AI-powered motion tracking to
-                help users count reps and monitor strength-training workouts.
-            </p>
-
-            <p>
-                <strong>KcalMotion Dance</strong> brings movement tracking and
-                calorie activity into a more dance-focused fitness experience.
-            </p>
-
-            <p>
-                Both approaches have the same goal: helping people make
-                movement a more consistent part of their lifestyle.
-            </p>
-
-        </section>
-
-
-        <!-- ========================= -->
-        <!-- COMPARISON TABLE -->
-        <!-- ========================= -->
-
-        <section id="which-app">
-
-            <h2>
-                Which AI Fitness App Is Right for You?
-            </h2>
-
+        <div class="table-container">
 
             <table>
 
@@ -729,26 +1401,32 @@
 
             </table>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <!-- ========================= -->
-        <!-- FINAL CTA -->
-        <!-- ========================= -->
+    <!-- ========================= -->
+    <!-- FINAL CTA -->
+    <!-- ========================= -->
 
-        <section id="start">
+    <section id="start">
 
-            <h2>
-                Start Your Fitness Journey
-            </h2>
+        <h2>
+            Start Your Fitness Journey
+        </h2>
 
-            <p>
-                Looking for
-                <strong>AI fitness apps worth trying</strong>?
-                Start with the experience that matches the way you like to
-                move.
-            </p>
+        <p>
+            Looking for
+            <strong>AI fitness apps worth trying</strong>?
+            Start with the experience that matches the way you like to
+            move.
+        </p>
 
+
+        <!-- REP MOTION -->
+
+        <div class="app-block">
 
             <h3>
                 RepMotion
@@ -760,20 +1438,22 @@
                 leaderboard.
             </p>
 
+            <a
+                class="cta"
+                href="https://play.google.com/store/apps/details?id=com.hoanguyendev.aisports"
+                target="_blank"
+                rel="noopener noreferrer">
 
-            <p>
+                Try RepMotion on Google Play
 
-                <a
-                    href="https://play.google.com/store/apps/details?id=com.hoanguyendev.aisports"
-                    target="_blank"
-                    rel="noopener noreferrer">
+            </a>
 
-                    Try RepMotion on Google Play
+        </div>
 
-                </a>
 
-            </p>
+        <!-- KCALMOTION -->
 
+        <div class="app-block">
 
             <h3>
                 KcalMotion Dance
@@ -784,28 +1464,38 @@
                 make staying active more interactive and enjoyable.
             </p>
 
+            <a
+                class="cta"
+                href="https://play.google.com/store/apps/details?id=com.dev.motion"
+                target="_blank"
+                rel="noopener noreferrer">
 
-            <p>
+                Try KcalMotion Dance on Google Play
 
-                <a
-                    href="https://play.google.com/store/apps/details?id=com.dev.motion"
-                    target="_blank"
-                    rel="noopener noreferrer">
+            </a>
 
-                    Try KcalMotion Dance on Google Play
+        </div>
 
-                </a>
-
-            </p>
-
-        </section>
+    </section>
 
 
-    </article>
+</article>
 
 </main>
+
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+    © 2026 AI Fitness Apps —
+    RepMotion &amp; KcalMotion Dance
+
+</footer>
+
 
 </body>
 
 </html>
-
